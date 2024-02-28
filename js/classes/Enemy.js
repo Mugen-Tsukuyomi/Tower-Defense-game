@@ -8,8 +8,8 @@ export class Enemy extends Sprite {
       imgSrc: 'imgs/orc.png',
       frames: { max: 7, hold: 4}
     })
-    this.width = this.img.width/7
-    this.height = this.img.height
+    this.width = 106
+    this.height = 79
     this.currentWayPoint = 0
     this.health = 100
     this.velocity = {
