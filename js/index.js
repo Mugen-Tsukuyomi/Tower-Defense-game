@@ -28,7 +28,7 @@ export const explosions = []
 Enemy.spawnEnemies()
 
 let heart = 10
-let coins = 100
+export let coins = 100
 
 function animate() {
   const animationId = requestAnimationFrame(animate)

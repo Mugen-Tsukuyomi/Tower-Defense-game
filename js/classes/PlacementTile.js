@@ -1,4 +1,4 @@
-import { c, mouse } from '../index.js'
+import { c, mouse, coins } from '../index.js'
 export class PlacementTile {
   constructor({ position }) {
     this.position = position
@@ -19,7 +19,8 @@ export class PlacementTile {
       mouse.x < this.position.x + this.size &&
       mouse.y > this.position.y &&
       mouse.y < this.position.y + this.size &&
-      this.empty
+      this.empty &&
+      coins >= 50
     ) {
       this.color = 'rgba(0,255,0,0.5)'
     } else this.color = 'rgba(255,255,255, 0.2)'
