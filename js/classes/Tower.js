@@ -50,29 +50,19 @@ export class Tower extends Sprite {
       const enemy = Enemy.enemies[i]
       let x, y
       if (this.center.x < enemy.position.x) x = enemy.position.x
-      if (this.center.x > enemy.position.x + enemy.width) {
+      else if (this.center.x > enemy.position.x + enemy.width) {
         x = enemy.position.x + enemy.width
-      }
-      if (
-        this.center.x > enemy.position.x &&
-        this.center.x < enemy.position.x + enemy.width
-      ) {
-        x = this.center.x
-      }
+      } else x = this.center.x
+
       if (this.center.y < enemy.position.y) y = enemy.position.y
-      if (this.center.y > enemy.position.y + enemy.height) {
+      else if (this.center.y > enemy.position.y + enemy.height) {
         y = enemy.position.y + enemy.height
-      }
-      if (
-        this.center.y > enemy.position.y &&
-        this.center.y < enemy.position.y + enemy.height
-      ) {
-        y = this.center.y
-      }
+      } else y = this.center.y
+
       const dx = this.center.x - x
       const dy = this.center.y - y
       const distance = Math.sqrt(dx * dx + dy * dy)
-      if (distance - this.range <= 0 && enemy.position.x < canvas.width) {
+      if (distance - this.range <= 0) {
         this.currentTarget = enemy
         break
       } else this.currentTarget = null
